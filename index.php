@@ -50,17 +50,24 @@
 </head>
 <body>
   <div class="container-lg">
-    <ul>
-      <?php foreach($hotels as $hotel) : ?>
-        <div class="col mb-4">
-          <?php foreach($hotel as $date) : ?>
-            <li><?php echo $date?></li>
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <?php foreach($hotels[0] as $chiave => $valore) : ?>
+            <th scope="col"> <?php echo $chiave ?></th>
           <?php endforeach ?>
-        </div>
-      <?php endforeach ?>
-    </ul>
-
-    
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($hotels as $hotel) : ?>
+          <tr>
+            <?php foreach ($hotel as $info) : ?>
+              <td><?php echo $info ?></td>
+            <?php endforeach ?>
+          </tr>
+        <?php endforeach ?>
+      </tbody>
+    </table>
   </div>
 </body>
 </html>
